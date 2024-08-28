@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="TOR rule set">
+
+<description>
+	TOR pmd rule set
+</description>
+
+	<rule ref="rulesets/finalizers.xml/AvoidCallingFinalize"/>	           <!-- Mandatory -->
+	<rule ref="rulesets/imports.xml/DontImportJavaLang"/>	               <!-- Mandatory -->
+	<rule ref="rulesets/naming.xml/AvoidDollarSigns"/>	                   <!-- Mandatory -->
+	<rule ref="rulesets/naming.xml/MethodWithSameNameAsEnclosingClass"/>   <!-- Mandatory -->
+	<rule ref="rulesets/controversial.xml/UnusedModifier"/>	               <!-- Mandatory -->
+	<rule ref="rulesets/basic.xml/ReturnFromFinallyBlock"/>	               <!-- Mandatory -->
+	<rule ref="rulesets/imports.xml/UnusedImports"/>	                   <!-- Mandatory -->
+	<rule ref="rulesets/imports.xml/ImportFromSamePackage"/>               <!-- Mandatory -->
+	<rule ref="rulesets/imports.xml/DuplicateImports"/>	                   <!-- Mandatory -->
+	<rule ref="rulesets/basic.xml/UnnecessaryConversionTemporary"/>        <!-- Mandatory -->
+	<rule ref="rulesets/controversial.xml/UnnecessaryConstructor"/>	       <!-- Mandatory -->
+	<rule ref="rulesets/finalizers.xml/FinalizeShouldBeProtected"/>	       <!-- Mandatory -->
+	<rule ref="rulesets/controversial.xml/DontImportSun"/>   	           <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/AvoidProtectedFieldInFinalClass"/>	   <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/CloseResource"/>	                       <!-- Mandatory -->
+	<rule ref="rulesets/finalizers.xml/FinalizeDoesNotCallSuperFinalize"/> <!-- Mandatory -->	
+	<rule ref="rulesets/naming.xml/ClassNamingConventions"/>	           <!-- Mandatory -->
+	<rule ref="rulesets/braces.xml/ForLoopsMustUseBraces"/>	               <!-- Mandatory -->
+	<rule ref="rulesets/unusedcode.xml/UnusedLocalVariable"/>              <!-- Mandatory -->
+	<rule ref="rulesets/basic.xml/OverrideBothEqualsAndHashcode"/>         <!-- Mandatory -->
+	<rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod"/>              <!-- Mandatory -->
+	<rule ref="rulesets/braces.xml/IfStmtsMustUseBraces"/>                 <!-- Mandatory -->
+	<rule ref="rulesets/braces.xml/IfElseStmtsMustUseBraces"/>             <!-- Mandatory -->
+	<rule ref="rulesets/braces.xml/WhileLoopsMustUseBraces"/>              <!-- Mandatory -->
+	<rule ref="rulesets/unusedcode.xml/UnusedPrivateField"/>               <!-- Mandatory but watch -->
+	<rule ref="rulesets/design.xml/SimplifyBooleanExpressions"/>           <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/SimplifyBooleanReturns"/>               <!-- Mandatory -->
+	<rule ref="rulesets/unusedcode.xml/UnusedFormalParameter"/>            <!-- Mandatory -->
+	<rule ref="rulesets/optimizations.xml/LocalVariableCouldBeFinal"/>	   <!-- Mandatory -->
+	<rule ref="rulesets/optimizations.xml/MethodArgumentCouldBeFinal"/>	   <!-- Mandatory -->
+	<rule ref="rulesets/naming.xml/SuspiciousConstantFieldName"/>          <!-- Mandatory -->
+	<rule ref="rulesets/strings.xml/StringInstantiation"/>                 <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/FinalFieldCouldBeStatic"/>	           <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/InstantiationToGetClass"/>              <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/ImmutableField"/>                       <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/UseSingleton"/>                         <!-- Advisatory -->
+	<rule ref="rulesets/codesize.xml">               					
+		<!-- Disabled these code size rules following TOR Mediation Team Sprint 1 Retrospective 
+		Review pending.
+		-->
+		<exclude name="CyclomaticComplexity"/>
+		<exclude name="NPathComplexity"/>		
+		<exclude name="TooManyMethods"/>
+	</rule>
+	
+	<!-- Increased to 50 for Service Framework team APIs -->
+	<rule ref="rulesets/codesize.xml/TooManyMethods">
+		<properties>
+			<property name="maxmethods" value="50"/>
+		</properties>
+	</rule>
+	
+	<rule ref="rulesets/design.xml/ConstructorCallsOverridableMethod"/>    <!-- Mandatory but watch -->
+	<rule ref="rulesets/coupling.xml/LooseCoupling"/>                      <!-- Advisatory but watch -->
+	<rule ref="rulesets/coupling.xml/CouplingBetweenObjects"/>             <!-- Mandatory but watch --> 
+	<rule ref="rulesets/strictexception.xml/AvoidCatchingThrowable"/>      <!-- Advisatory -->
+	<rule ref="rulesets/strictexception.xml/SignatureDeclareThrowsException"/> <!-- Mandatory -->
+	<rule ref="rulesets/design.xml/AvoidInstanceofChecksInCatchClause"/>       <!-- Mandatory -->
+	<rule ref="rulesets/strictexception.xml/ExceptionAsFlowControl"/>          <!-- Mandatory -->
+	<rule ref="rulesets/strictexception.xml/AvoidThrowingRawExceptionTypes"/>  <!-- Mandatory --> 
+	<rule ref="rulesets/strictexception.xml/AvoidThrowingNullPointerException"/><!-- Mandatory -->
+	
+	<!-- JEE -->
+	<rule ref="rulesets/j2ee.xml/UseProperClassLoader"/>                   <!-- new rule, mandatory but watch -->
+	<rule ref="rulesets/j2ee.xml/DoNotCallSystemExit"/>                    <!-- new rule, mandatory but watch -->
+	<rule ref="rulesets/j2ee.xml/StaticEJBFieldShouldBeFinal"/>            <!-- new rule, mandatory but watch -->
+	<rule ref="rulesets/j2ee.xml/DoNotUseThreads"/>                        <!-- new rule, mandatory but watch -->
+</ruleset>
+
